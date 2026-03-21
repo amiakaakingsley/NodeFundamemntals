@@ -1,4 +1,10 @@
-const {readFile, writeFile} = require('fs')
+// Async functions:
+// Run in the background
+// Return later
+// Use callbacks (or promises)
+
+
+const { readFile, writeFile} = require('fs')
 const {join} = require('path')
 const filePath = join(__dirname, 'content', 'subFolder', 'file.txt')
 
@@ -11,6 +17,9 @@ readFile(filePath, 'utf-8', (err, data) => {
         
     writeFile("./content/subFolder/newFile2.txt", newText, (err) => {
         if(err) throw err;
-        console.log(`A new file was successfully created ${newText}`);           
+        console.log(`A new file was ysuccessfully created ${newText}`);           
     })
     });
+
+    console.log('finish');
+    

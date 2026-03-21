@@ -1,4 +1,9 @@
-//Note in an Sync method, you dont eed a callback function because the methods runs immediately and return result directly
+//Synchronous methods execute immediately and return results directly, so callbacks are not required for handling delayed results, unlike asynchronous methods
+
+// Sync functions:
+// Execute immediately
+// Return result directly
+// Do NOT take callbacks
 
 const { readFileSync, writeFileSync} = require("fs");
 const {join} =  require("path")

@@ -1,6 +1,10 @@
-const  _ = require('lodash');
+console.log("Hello world");
 
-const items = [1, [1, [2, [3, [4]]]]];
+setTimeout(() => {
+    console.log('this is an event happening ');
+    
+}, 1000);
 
-const newItems = _.flattenDeep(items);
-console.log(newItems);
+
+console.log('finish');
+
