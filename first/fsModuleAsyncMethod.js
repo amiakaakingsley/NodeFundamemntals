@@ -1,5 +1,5 @@
 // Async functions:
-// Run in the background
+// Run in the background allows other request to run
 // Return later
 // Use callbacks (or promises)
 

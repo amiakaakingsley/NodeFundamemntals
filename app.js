@@ -1,10 +1,8 @@
-console.log("Hello world");
+const {createReadStream} = require('fs');
 
-setTimeout(() => {
-    console.log('this is an event happening ');
-    
-}, 1000);
+const stream = createReadStream('./data/bigFile.txt', 'utf8');
 
-
-console.log('finish');
-
+stream.on('data', (result) => {
+  console.log(result);
+  
+}) 
