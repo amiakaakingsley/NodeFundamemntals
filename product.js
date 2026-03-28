@@ -38,35 +38,36 @@ const product = [{
 
 ]
 
-const people = [{   
+const people = [
+    {   
     id: 1,
-    name: "John Doe", 
-    password: "wjlkwowlk"
+    name: "Amiaka Kingsley", 
+    role: "Full Stack Developer"
 },
-    {
+     {   
     id: 2,
-    name: "Jane Doe", 
-    password: "wjlkwowlk"
+    name: "Munachi Micheal", 
+    role: "Web Developer",
 },
-    {
-    id: 3,  
-    name: "Jack Doe", 
-    password: "wjlkwowlk"
+     {   
+    id: 3,
+    name: "Sarah Johnson", 
+    role: "Backend Engineer"
 },
-    {
+    {   
     id: 4,
-    name: "Jill Doe", 
-    password: "wjlkwowlk"
-    },
-    {
+    name: "David Lee", 
+    role: "Frontend Developer"
+},
+    {   
     id: 5,
-    name: "James Doe", 
-    password: "wjlkwowlk"
-    },
-     {
-    id: 5,
-    name: "James Doe", 
-    password: "wjlkwowlk"
+    name: "Mike Peace", 
+    role: "Digital Marketer"
+},
+     {   
+    id: 6,
+    name: "Kelvin Dave", 
+    role: "Cyber Security"
 },
     
     
