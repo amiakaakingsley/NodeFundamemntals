@@ -11,7 +11,7 @@ router.get('/peoplePage', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../public/login.html'));
+  res.sendFile(path.resolve(__dirname, '../public/addUser.html'));
 });
 
 module.exports = router;

@@ -118,77 +118,53 @@
         <form id="loginForm">
                 <div class="form_alart"> </div>
             <div class="input-group">
-                <label>Email</label>
-                <input type="email" name="userEmail" placeholder="Enter your email" class="userEmail" autocomplete="false" required>
+                <label>Name</label>
+                <input type="text" name="userName" placeholder="Enter your name" class="userName" autocomplete="false" required>
             </div>
 
             <div class="input-group">
-                <label>Password</label>
-                <input type="password" class="userPassword" name="userPassword" placeholder="Enter your password" autocomplete="false" required>
+                <label>Role</label>
+                <input type="text" class="userRole" name="userRole" placeholder="Enter your role" autocomplete="false" required>
             </div>
 
             <button class="login" type="submit">Add</button>
 
             <div class="extra">
-        <p>See List of Users <a href="/api/peoplePage">Users</a></p>
+        <p>See List of Users <a href="/peoplePage">Users</a></p>
             </div>
-           
-
-
         </form>
 
     </div>
-    <div class="results">
-        
-    </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
-
-        const result = document.querySelector('.results');
-        const people = async () => {
-            try {
-                const { data } = await axios.get('/api/people');
-                const peopleList = data.data
-                    .map((person) => {
-                        return `<p class="results">${person.name}</p>`
-                    })
-                result.innerHTML = peopleList.join('');
-
-            } catch (error) {
-                console.error('Error fetching people:', error);
-            }
-        };
-
-        people();
-
     const btn = document.querySelector('.login');
-    const inputName = document.querySelector('.userEmail');
-    const inputPassword = document.querySelector('.userPassword');
+    const inputName = document.querySelector('.userName');
+    const inputRole = document.querySelector('.userRole');
 
 
     btn.addEventListener('click', async (e) => {
         e.preventDefault();
         const name = inputName.value;
-        const password = inputPassword.value;
-        console.log(name, password + "from the javascript file");
+        const role = inputRole.value;
+     
         const formAlert = document.querySelector('.form_alart')
 
-        if(!name || !password){
+        if(!name || !role){
             formAlert.textContent = "Please provide credentials";
             return;
         }
         try {
-            const { data } = await axios.post('/api/people', {name: name, password: password});
-            people();
-            formAlert.textContent = `Welcome ${data.people}`;
+            const { data } = await axios.post('/api/people', {name: name, role: role});
+            formAlert.textContent = `Welcome ${data.person.name}`;
 
         } catch (error) {
            console.log(error.response.data.message);
         }
         inputName.value =  "";
-        inputPassword.value = "";
+        inputRole.value = "";
+
+
     })
 
 

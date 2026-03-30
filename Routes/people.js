@@ -23,18 +23,19 @@ router.put('/:id', (req, res) => {
 
 });
 
-router.post('', (req, res) => {
-  const { name, password } = req.body;
-  console.log(name, password + "from the server");
+router.post('/', (req, res) => {
+  const { name, role } = req.body;
+  console.log(name, role + "from the server");
 
   const personId = people.length + 1;
 
-  if (!name || !password) {
+  if (!name || !role) {
     return res.status(400).json({ success: false, message: 'Please provide credentials' });
   }
-  people.push({ id: personId, name, password });
-  res.status(201).json({ success: true, people: name });  // return the name of the person 
-
+  people.push({ id: personId, name, role });
+  res.status(201).json({ success: true, people: name });  
+  // return the name of the person 
+  
 });
 
 
